@@ -3,7 +3,7 @@ require 'net/http'
 require 'json'
 
 get '/' do
-  erb :home, layout: :application_layout
+  erb :index, layout: :application_layout
 end
 
 ## People
@@ -11,9 +11,8 @@ end
 get '/people' do
   response = get_all("people")
   people = response.fetch(:results, [])
-  next_url = response.fetch(:next, nil)
 
-  erb :"people/index", layout: :application_layout, locals: { people: people, next_url: next_url }
+  erb :"people/index", layout: :application_layout, locals: { people: people }
 end
 
 get '/people/:id' do
@@ -27,9 +26,8 @@ end
 get '/planets' do
   response = get_all("planets")
   planets = response.fetch(:results, [])
-  next_url = response.fetch(:next, nil)
 
-  erb :"planets/index", layout: :application_layout, locals: { planets: planets, next_url: next_url }
+  erb :"planets/index", layout: :application_layout, locals: { planets: planets }
 end
 
 get '/planets/:id' do
@@ -53,41 +51,7 @@ get '/films/:id' do
   erb :"films/show", layout: :application_layout, locals: { film: film }
 end
 
-get '/films/:id/link' do
-  film = get_film(params[:id])
-
-  erb :"films/_link", locals: { film: film }
-end
-
-###########
-
-get '/slow' do
-  ids = [1, 5, 14]
-
-  erb :index_slow, layout: :application_layout, locals: { ids: ids }
-end
-
-get '/person/:id' do
-  person = get_person_slow(params[:id])
-
-  erb :person_component, locals: { person: person }
-end
-
-get '/partial1' do
-  erb :partial1
-end
-
-get '/partial2' do
-  erb :partial2
-end
-
-get '/below_the_fold' do
-  erb :below_the_fold
-end
-
-get '/turbo' do
-  erb :index_turbo, layout: :application_layout
-end
+## Helpers
 
 helpers do
   def get_all(resource)
