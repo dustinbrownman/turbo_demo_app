@@ -1,0 +1,9 @@
+<section>
+  <h2>Star Wars characters</h2>
+
+  <% ids.each do |id| %>
+    <turbo-frame id="person-<%= id %>" src="/person/<%= id %>">
+      <p class="loading">placeholder for <code>person-<%= id %></code></p>
+    </turbo-frame>
+  <% end %>
+</section>

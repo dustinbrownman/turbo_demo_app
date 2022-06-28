@@ -1,0 +1,15 @@
+<section class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">People</li>
+    </ol>
+  </nav>
+
+  <h2>Star Wars characters</h2>
+
+  <div class="d-flex flex-wrap" style="gap:16px;">
+    <% people.each do |person| %>
+      <%= erb :"people/_person_card", locals: person %>
+    <% end %>
+  </div>
+</section>

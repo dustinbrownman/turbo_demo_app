@@ -1,0 +1,15 @@
+<section class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Planets</li>
+    </ol>
+  </nav>
+
+  <h2>Star Wars planets</h2>
+
+  <div class="d-flex flex-wrap" style="gap:16px;">
+    <% planets.each do |planet| %>
+      <%= erb :"planets/_planet_card", locals: planet %>
+    <% end %>
+  </div>
+</section>

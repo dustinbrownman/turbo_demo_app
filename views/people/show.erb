@@ -1,0 +1,10 @@
+<section class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/people">People</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><%= person[:name] %></li>
+    </ol>
+  </nav>
+
+  <%= erb :"people/_person_card", locals: person %>
+</section>

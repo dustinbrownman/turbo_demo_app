@@ -1,0 +1,10 @@
+<section class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/planets">Planets</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><%= planet[:name] %></li>
+    </ol>
+  </nav>
+
+  <%= erb :"planets/_planet_card", locals: planet %>
+</section>

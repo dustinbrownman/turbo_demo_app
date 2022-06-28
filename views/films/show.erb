@@ -1,0 +1,10 @@
+<section class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/films">Films</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><%= film[:title] %></li>
+    </ol>
+  </nav>
+
+  <%= erb :"films/_film_card", locals: film %>
+</section>

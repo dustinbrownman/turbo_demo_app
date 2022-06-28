@@ -1,0 +1,23 @@
+<div class="card shadow-sm" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">
+      <a href="/films/<%= url.split("/").last %>"><%= title %></a>
+    </h5>
+    <ul>
+      <li>
+        <strong>Director:</strong>
+        <%= director %>
+      </li>
+
+      <li>
+        <strong>Producer:</strong>
+        <%= producer %>
+      </li>
+
+      <li>
+        <strong>Release date:</strong>
+        <%= release_date %>
+      </li>
+    </ul>
+  </div>
+</div>

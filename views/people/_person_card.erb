@@ -1,0 +1,39 @@
+<% id = url.split("/").last %>
+
+<div class="card shadow-sm" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">
+      <a href="/people/<%= id %>"><%= name %></a>
+    </h5>
+    <ul>
+      <li>
+        <strong>Height:</strong>
+        <%= height %>
+      </li>
+
+      <li>
+        <strong>Mass:</strong>
+        <%= mass %>
+      </li>
+
+      <li>
+        <strong>Hair color:</strong>
+        <%= hair_color %>
+      </li>
+
+      <li>
+        <strong>Birth year:</strong>
+        <%= birth_year %>
+      </li>
+
+      <li>
+        <strong>Number of films:</strong>
+        <%= films.count %>
+      </li>
+    </ul>
+
+    <%# <h6>Films</h6> %>
+
+    <%#= erb :"people/_film_list", locals: { films: films } %>
+  </div>
+</div>
