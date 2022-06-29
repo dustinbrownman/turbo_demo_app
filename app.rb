@@ -51,6 +51,12 @@ get '/films/:id' do
   erb :"films/show", layout: :application_layout, locals: { film: film }
 end
 
+get '/films/:id/link' do
+  film = get_film(params[:id])
+
+  erb :"films/_link", locals: { film: film }
+end
+
 ## Helpers
 
 helpers do

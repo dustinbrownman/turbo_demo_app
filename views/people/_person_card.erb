@@ -32,8 +32,17 @@
       </li>
     </ul>
 
-    <%# <h6>Films</h6> %>
+    <h6>Films</h6>
 
-    <%#= erb :"people/_film_list", locals: { films: films } %>
+    <ul class="list-group">
+      <% films.each do |film_url| %>
+        <li class="list-group-item">
+          <% film_id = film_url.split("/").last %>
+          <turbo-frame id="film-link-<%= film_id %>" src="/films/<%= film_id %>/link">
+            <a class="placeholder col-12"></a>
+          </turbo-frame>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
