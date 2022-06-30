@@ -86,10 +86,5 @@ helpers do
     film = JSON.parse(response, symbolize_names: true)
     film.merge(id: id)
   end
-
-  def get_person_slow(id)
-    sleep(2)
-    get_person(id)
-  end
 end
 
